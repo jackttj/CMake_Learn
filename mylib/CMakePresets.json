@@ -14,7 +14,7 @@
       "cacheVariables": {
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/../out/install/mylib",
-        "CMAKE_PREFIX_PATH": "${sourceDir}/../out/install/upstream;${sourceDir}/../out/install/upstream",
+        "CMAKE_PREFIX_PATH": "${sourceDir}/../out/install/upstream;${sourceDir}/../out/install/fmt-shared",
         "BUILD_TESTING": "ON"
       }
     },

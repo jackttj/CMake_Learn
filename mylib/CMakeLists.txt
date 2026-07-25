@@ -11,12 +11,14 @@ include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 find_package(Upstream 1.0 CONFIG REQUIRED)
+find_package(fmt  REQUIRED)
 
 add_library(mylib src/greeting.cpp)
 add_library(MyLib::mylib ALIAS mylib)
 
 target_compile_features(mylib PUBLIC cxx_std_11)
 target_link_libraries(mylib PUBLIC Upstream::upstream)
+target_link_libraries(mylib PUBLIC fmt::fmt-c)
 target_include_directories(
     mylib
     PUBLIC

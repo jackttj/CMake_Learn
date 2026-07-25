@@ -12,7 +12,7 @@
       "generator": "MinGW Makefiles",
       "binaryDir": "${sourceDir}/../out/build/consumer/${presetName}",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "${sourceDir}/../out/install/mylib;${sourceDir}/../out/install/upstream",
+        "CMAKE_PREFIX_PATH": "${sourceDir}/../out/install/mylib;${sourceDir}/../out/install/upstream;${sourceDir}/../out/install/fmt-shared",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
         "BUILD_TESTING": "ON"
       }
