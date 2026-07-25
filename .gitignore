@@ -1,0 +1,21 @@
+# CMake 构建与安装产物
+/out/
+/build/
+/cmake-build-*/
+
+# 编译器生成文件
+*.o
+*.obj
+*.exe
+*.dll
+*.a
+*.lib
+
+# IDE
+.vscode/
+.idea/
+
+# CMake 临时文件
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
