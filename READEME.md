@@ -41,7 +41,7 @@ upstream ──> mylib ──> consumer
 
 - CMake 3.25+（使用 Workflow Presets）
 - 支持 C++11 的编译器
-- MinGW（当前 Presets 默认使用 `MinGW Makefiles`）
+- MinGW（当前 Presets 默认使用 `MinGW Makefiles`）// 可配置
 
 使用 Ninja、Visual Studio 或其他工具链时，可以在不提交版本库的 `CMakeUserPresets.json` 中继承 Preset 并覆盖 `generator`。
 

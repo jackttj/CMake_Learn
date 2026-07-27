@@ -9,7 +9,7 @@
     {
       "name": "base",
       "hidden": true,
-      "generator": "MinGW Makefiles",
+      "generator": "Visual Studio 18 2026",
       "binaryDir": "${sourceDir}/../out/build/upstream/${presetName}",
       "cacheVariables": {
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
@@ -43,6 +43,7 @@
     {
       "name": "release",
       "configurePreset": "release",
+      "configuration": "Release",
       "jobs": 0
     },
     {
@@ -54,6 +55,7 @@
     {
       "name": "install-release",
       "configurePreset": "release",
+      "configuration": "Release",
       "targets": ["install"],
       "jobs": 0
     }
@@ -62,6 +64,7 @@
     {
       "name": "dev",
       "configurePreset": "dev",
+      "configuration": "Release",
       "output": {
         "outputOnFailure": true
       }
@@ -69,6 +72,7 @@
     {
       "name": "release",
       "configurePreset": "release",
+      "configuration": "Release",
       "output": {
         "outputOnFailure": true
       }

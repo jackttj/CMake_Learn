@@ -1,0 +1,214 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/../out/build/third-part/superbuild/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "THIRD_PARTY_BUILD_ROOT": "${sourceDir}/../out/build/third-part",
+        "THIRD_PARTY_INSTALL_ROOT": "${sourceDir}/../out/install/third-part",
+        "THIRD_PARTY_VARIANT": "${presetName}"
+      }
+    },
+    {
+      "name": "mingw-base",
+      "hidden": true,
+      "inherits": "base",
+      "generator": "MinGW Makefiles"
+    },
+    {
+      "name": "vs-base",
+      "hidden": true,
+      "inherits": "base",
+      "generator": "Visual Studio 18 2026",
+      "architecture": "x64"
+    },
+    {
+      "name": "debug-static",
+      "displayName": "Third-party Debug static",
+      "inherits": "mingw-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "THIRD_PARTY_BUILD_SHARED_LIBS": "OFF"
+      }
+    },
+    {
+      "name": "debug-shared",
+      "displayName": "Third-party Debug shared",
+      "inherits": "mingw-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "THIRD_PARTY_BUILD_SHARED_LIBS": "ON"
+      }
+    },
+    {
+      "name": "release-static",
+      "displayName": "Third-party Release static",
+      "inherits": "mingw-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "THIRD_PARTY_BUILD_SHARED_LIBS": "OFF"
+      }
+    },
+    {
+      "name": "release-shared",
+      "displayName": "Third-party Release shared",
+      "inherits": "mingw-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "THIRD_PARTY_BUILD_SHARED_LIBS": "ON"
+      }
+    },
+    {
+      "name": "vs-debug-static",
+      "displayName": "Visual Studio x64 Debug static",
+      "inherits": "vs-base",
+      "cacheVariables": {
+        "THIRD_PARTY_BUILD_SHARED_LIBS": "OFF"
+      }
+    },
+    {
+      "name": "vs-debug-shared",
+      "displayName": "Visual Studio x64 Debug shared",
+      "inherits": "vs-base",
+      "cacheVariables": {
+        "THIRD_PARTY_BUILD_SHARED_LIBS": "ON"
+      }
+    },
+    {
+      "name": "vs-release-static",
+      "displayName": "Visual Studio x64 Release static",
+      "inherits": "vs-base",
+      "cacheVariables": {
+        "THIRD_PARTY_BUILD_SHARED_LIBS": "OFF"
+      }
+    },
+    {
+      "name": "vs-release-shared",
+      "displayName": "Visual Studio x64 Release shared",
+      "inherits": "vs-base",
+      "cacheVariables": {
+        "THIRD_PARTY_BUILD_SHARED_LIBS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug-static",
+      "configurePreset": "debug-static",
+      "jobs": 0
+    },
+    {
+      "name": "debug-shared",
+      "configurePreset": "debug-shared",
+      "jobs": 0
+    },
+    {
+      "name": "release-static",
+      "configurePreset": "release-static",
+      "jobs": 0
+    },
+    {
+      "name": "release-shared",
+      "configurePreset": "release-shared",
+      "jobs": 0
+    },
+    {
+      "name": "vs-debug-static",
+      "configurePreset": "vs-debug-static",
+      "configuration": "Debug",
+      "jobs": 0
+    },
+    {
+      "name": "vs-debug-shared",
+      "configurePreset": "vs-debug-shared",
+      "configuration": "Debug",
+      "jobs": 0
+    },
+    {
+      "name": "vs-release-static",
+      "configurePreset": "vs-release-static",
+      "configuration": "Release",
+      "jobs": 0
+    },
+    {
+      "name": "vs-release-shared",
+      "configurePreset": "vs-release-shared",
+      "configuration": "Release",
+      "jobs": 0
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "debug-static",
+      "displayName": "Build and install all third-party Debug static libraries",
+      "steps": [
+        { "type": "configure", "name": "debug-static" },
+        { "type": "build", "name": "debug-static" }
+      ]
+    },
+    {
+      "name": "debug-shared",
+      "displayName": "Build and install all third-party Debug shared libraries",
+      "steps": [
+        { "type": "configure", "name": "debug-shared" },
+        { "type": "build", "name": "debug-shared" }
+      ]
+    },
+    {
+      "name": "release-static",
+      "displayName": "Build and install all third-party Release static libraries",
+      "steps": [
+        { "type": "configure", "name": "release-static" },
+        { "type": "build", "name": "release-static" }
+      ]
+    },
+    {
+      "name": "release-shared",
+      "displayName": "Build and install all third-party Release shared libraries",
+      "steps": [
+        { "type": "configure", "name": "release-shared" },
+        { "type": "build", "name": "release-shared" }
+      ]
+    },
+    {
+      "name": "vs-debug-static",
+      "displayName": "VS x64: build and install Debug static libraries",
+      "steps": [
+        { "type": "configure", "name": "vs-debug-static" },
+        { "type": "build", "name": "vs-debug-static" }
+      ]
+    },
+    {
+      "name": "vs-debug-shared",
+      "displayName": "VS x64: build and install Debug shared libraries",
+      "steps": [
+        { "type": "configure", "name": "vs-debug-shared" },
+        { "type": "build", "name": "vs-debug-shared" }
+      ]
+    },
+    {
+      "name": "vs-release-static",
+      "displayName": "VS x64: build and install Release static libraries",
+      "steps": [
+        { "type": "configure", "name": "vs-release-static" },
+        { "type": "build", "name": "vs-release-static" }
+      ]
+    },
+    {
+      "name": "vs-release-shared",
+      "displayName": "VS x64: build and install Release shared libraries",
+      "steps": [
+        { "type": "configure", "name": "vs-release-shared" },
+        { "type": "build", "name": "vs-release-shared" }
+      ]
+    }
+  ]
+}

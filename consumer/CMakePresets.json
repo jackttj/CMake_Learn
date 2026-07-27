@@ -9,7 +9,7 @@
     {
       "name": "base",
       "hidden": true,
-      "generator": "MinGW Makefiles",
+      "generator": "Visual Studio 18 2026",
       "binaryDir": "${sourceDir}/../out/build/consumer/${presetName}",
       "cacheVariables": {
         "CMAKE_PREFIX_PATH": "${sourceDir}/../out/install/mylib",

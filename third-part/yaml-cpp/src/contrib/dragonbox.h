@@ -3234,8 +3234,8 @@ namespace jkj {
                 template <class PreferredIntegerTypesPolicy>
                 using decimal_exponent_type =
                     typename PreferredIntegerTypesPolicy::template decimal_exponent_type<
-                        FormatTraits, detail::stdr::int_least32_t(min(-max_k, min_k)),
-                        detail::stdr::int_least32_t(max(max_k, -min_k + kappa + 1))>;
+                        FormatTraits, detail::stdr::int_least32_t(impl::min(-max_k, min_k)),
+                        detail::stdr::int_least32_t(impl::max(max_k, -min_k + kappa + 1))>;
 
                 template <class SignPolicy, class TrailingZeroPolicy, class PreferredIntegerTypesPolicy>
                 using return_type =

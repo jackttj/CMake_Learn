@@ -9,7 +9,8 @@
     {
       "name": "base",
       "hidden": true,
-      "generator": "MinGW Makefiles",
+      "generator": "Visual Studio 18 2026",
+      "architecture": "x64",
       "binaryDir": "${sourceDir}/out/build/superbuild/${presetName}"
     },
     {
@@ -18,7 +19,8 @@
       "description": "Build dependencies, Upstream, MyLib and Consumer",
       "inherits": "base",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "SUPERBUILD_VARIANT": "vs-debug",
+        "SUPERBUILD_BUILD_CONFIG": "Debug"
       }
     },
     {
@@ -27,7 +29,8 @@
       "description": "Build dependencies, Upstream, MyLib and Consumer",
       "inherits": "base",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release"
+        "SUPERBUILD_VARIANT": "vs-release",
+        "SUPERBUILD_BUILD_CONFIG": "Release"
       }
     }
   ],
@@ -35,11 +38,13 @@
     {
       "name": "dev",
       "configurePreset": "dev",
+      "configuration": "Debug",
       "jobs": 0
     },
     {
       "name": "release",
       "configurePreset": "release",
+      "configuration": "Release",
       "jobs": 0
     }
   ],

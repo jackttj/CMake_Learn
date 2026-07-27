@@ -9,12 +9,12 @@
     {
       "name": "base",
       "hidden": true,
-      "generator": "MinGW Makefiles",
+      "generator": "Visual Studio 18 2026",
       "binaryDir": "${sourceDir}/../out/build/mylib/${presetName}",
       "cacheVariables": {
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/../out/install/mylib",
-        "CMAKE_PREFIX_PATH": "${sourceDir}/../out/install/upstream;${sourceDir}/../out/install/fmt-shared",
+        "CMAKE_PREFIX_PATH": "${sourceDir}/../out/install/upstream;${sourceDir}/../out/install/third-part/fmt",
         "BUILD_TESTING": "ON"
       }
     },
