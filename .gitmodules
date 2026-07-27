@@ -1,7 +1,0 @@
-[submodule "third-part/fmt"]
-    path = third-part/fmt
-    url = git@github.com:fmtlib/fmt.git
-
-[submodule "third-part/yaml-cpp"]
-    path = third-part/yaml-cpp
-    url = git@github.com:jbeder/yaml-cpp.git
