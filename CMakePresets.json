@@ -10,16 +10,12 @@
       "name": "base",
       "hidden": true,
       "generator": "MinGW Makefiles",
-      "binaryDir": "${sourceDir}/../out/build/consumer/${presetName}",
-      "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "${sourceDir}/../out/install/mylib",
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "BUILD_TESTING": "ON"
-      }
+      "binaryDir": "${sourceDir}/out/build/superbuild/${presetName}"
     },
     {
       "name": "dev",
-      "displayName": "Consumer Debug",
+      "displayName": "All projects (Debug)",
+      "description": "Build dependencies, Upstream, MyLib and Consumer",
       "inherits": "base",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug"
@@ -27,7 +23,8 @@
     },
     {
       "name": "release",
-      "displayName": "Consumer Release",
+      "displayName": "All projects (Release)",
+      "description": "Build dependencies, Upstream, MyLib and Consumer",
       "inherits": "base",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
@@ -46,39 +43,21 @@
       "jobs": 0
     }
   ],
-  "testPresets": [
-    {
-      "name": "dev",
-      "configurePreset": "dev",
-      "output": {
-        "outputOnFailure": true
-      }
-    },
-    {
-      "name": "release",
-      "configurePreset": "release",
-      "output": {
-        "outputOnFailure": true
-      }
-    }
-  ],
   "workflowPresets": [
     {
       "name": "dev",
-      "displayName": "Build and test Consumer (Debug)",
+      "displayName": "Configure and build everything (Debug)",
       "steps": [
         { "type": "configure", "name": "dev" },
-        { "type": "build", "name": "dev" },
-        { "type": "test", "name": "dev" }
+        { "type": "build", "name": "dev" }
       ]
     },
     {
       "name": "release",
-      "displayName": "Build and test Consumer (Release)",
+      "displayName": "Configure and build everything (Release)",
       "steps": [
         { "type": "configure", "name": "release" },
-        { "type": "build", "name": "release" },
-        { "type": "test", "name": "release" }
+        { "type": "build", "name": "release" }
       ]
     }
   ]

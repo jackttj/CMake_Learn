@@ -1,5 +1,30 @@
 # CMake 多级 Package 示例
 
+## 从根目录构建全部工程
+
+在仓库根目录执行：
+
+```powershell
+cmake --workflow --preset dev
+```
+
+总 Preset 会自动编排依赖关系：
+
+```text
+upstream ─┐
+          ├──> mylib ──> consumer
+fmt ──────┘
+```
+
+Upstream 和 fmt 都安装完成后才会配置 MyLib；MyLib 安装完成后才会配置
+Consumer。每一级仍是独立 CMake 工程，并通过安装后的 package 连接。
+
+Release 构建使用：
+
+```powershell
+cmake --workflow --preset release
+```
+
 本仓库包含三个完全独立的 CMake 工程，依赖关系如下：
 
 ```text

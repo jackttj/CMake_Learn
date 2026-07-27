@@ -12,6 +12,9 @@ include(CMakePackageConfigHelpers)
 
 find_package(Upstream 1.0 CONFIG REQUIRED)
 find_package(fmt  REQUIRED)
+set(MYLIB_UPSTREAM_DIR "${Upstream_DIR}")
+set(MYLIB_FMT_DIR "${fmt_DIR}")
+
 
 add_library(mylib src/greeting.cpp)
 add_library(MyLib::mylib ALIAS mylib)
