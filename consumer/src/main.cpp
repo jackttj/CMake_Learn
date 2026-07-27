@@ -2,9 +2,19 @@
 
 #include <iostream>
 
+#if defined(_WIN32)
+#include <windows.h>
+#endif
+
 int main()
 {
+#if defined(_WIN32)
+    // MyLib returns UTF-8 text. Make the Windows console decode it as UTF-8.
+    SetConsoleOutputCP(CP_UTF8);
+#endif
+
     std::cout << mylib::greeting("downstream consumer") << '\n';
-    std::cout << mylib::formatted_greeting("downstream consumer",1) << '\n';
+    std::cout << mylib::formatted_greeting("downstream consumer", 1) << '\n';
+    std::cout << mylib::formatted_today() << '\n';
     return 0;
 }

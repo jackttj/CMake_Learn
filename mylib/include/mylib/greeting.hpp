@@ -10,4 +10,6 @@ std::string greeting(const std::string& name);
 std::string formatted_greeting(
     const std::string& name,
     int visit_count);
+
+std::string formatted_today();
 }  // namespace mylib
