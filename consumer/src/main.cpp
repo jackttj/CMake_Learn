@@ -1,4 +1,6 @@
 #include <mylib/greeting.hpp>
+#include<mymath/mymath.h>
+using namespace Mylib;
 
 #include <iostream>
 
@@ -16,5 +18,7 @@ int main()
     std::cout << mylib::greeting("downstream consumer") << '\n';
     std::cout << mylib::formatted_greeting("downstream consumer", 1) << '\n';
     std::cout << mylib::formatted_today() << '\n';
+    Mymath mymath;
+    std::cout << "1 Add 2 equal to" << mymath.add(1 , 2) << '\n';
     return 0;
 }

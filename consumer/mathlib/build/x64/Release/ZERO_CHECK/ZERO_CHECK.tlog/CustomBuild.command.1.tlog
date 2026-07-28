@@ -1,0 +1,10 @@
+^E:\C++\CMAKE_LEARN\CONSUMER\MATHLIB\BUILD\CMAKEFILES\F4A067488E0D0BA50B41E32C9FD25393\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/c++/CMake_learn/consumer/mathlib -BE:/c++/CMake_learn/consumer/mathlib/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/c++/CMake_learn/consumer/mathlib/build/MathLIB.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

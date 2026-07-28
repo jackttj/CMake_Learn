@@ -39,13 +39,13 @@
       "name": "dev",
       "configurePreset": "dev",
       "configuration": "Debug",
-      "jobs": 0
+      "jobs": 16
     },
     {
       "name": "release",
       "configurePreset": "release",
       "configuration": "Release",
-      "jobs": 0
+      "jobs": 16
     }
   ],
   "workflowPresets": [
