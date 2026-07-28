@@ -19,6 +19,6 @@ int main()
     std::cout << mylib::formatted_greeting("downstream consumer", 1) << '\n';
     std::cout << mylib::formatted_today() << '\n';
     Mymath mymath;
-    std::cout << "1 Add 2 equal to" << mymath.add(1 , 2) << '\n';
+    std::cout << "1 Add 2 equal to " << mymath.add(1 , 2) << '\n';
     return 0;
 }
